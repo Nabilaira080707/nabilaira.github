@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT-FEST KELOMPOK 2</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 10px;
+            color: #333333;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            background-color: #e0e0e0;
+            margin: 8px 0;
+            padding: 10px;
+            border-radius: 5px;
+            color: #333333;
+            cursor: pointer;
+        }
+        .mentor {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #444444;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button.off {
+            background-color: #f44336;
+        }
+        .biodata {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kelompok 2</h1>
+        <ul>
+            <li data-biodata="Nama: Erlangga Dheiga Pratama\Kelas: 11 SIJA B\Divisi: Desain">Erlangga Dheiga Pratama</li>
+            <li data-biodata="Nama: Nabila Ira Eventin\Kelas: 11 SIJA A\Divisi: Web">Nabila Ira Eventin</li>
+            <li data-biodata="Nama: Alya Maulida Avika\Kelas: 11 SIJA B\Divisi: Aplikasi">Alya Maulida Avika</li>
+            <li data-biodata="Nama: Khairil Zhahran Saputra\Kelas: 11 SIJA A\Divisi: Jaringan">Khairil Zhahran Saputra</li>
+            <li data-biodata="Nama: Muhammad Fadhil Avanindra\Kelas: 11 SIJA B\Divisi: SioT">Muhammad Fadhil Avanindra</li>
+            <li data-biodata="Nama: Alif Hafiz Wardana\Kelas: 11 SIJA A\Divisi: Desain">Alif Hafiz Wardana</li>
+            <li data-biodata="Nama: Zero Seven Gea Hevit\Kelas: 11 SIJA A\Divisi: Aplikasi">Zero Seven Gea Hevit</li>
+            <li data-biodata="Nama: Adelia Cahya Ramadhani\Kelas: 11 SIJA A\Divisi: Web">Adelia Cahya Ramadhani</li>
+            <li data-biodata="Nama: Anggun Danu Arta\Kelas: 11 SIJA A\Divisi: Web">Anggun Danu Arta</li>
+            <li data-biodata="Nama: Keyla Yustika Rinjani\Kelas: 11 SIJA B\Divisi: SioT">Keyla Yustika Rinjani</li>
+        </ul>
+        <div class="biodata" id="biodata"></div>
+        <p class="mentor">Mentor: Kahfi Hisbullah</p>
+        <button class="button" id="manualButton">Manual</button>
+        <button class="button" id="automaticButton">Automatic</button>
+    </div>
+
+    <script>
+        const members = document.querySelectorAll('li');
+        const biodataDiv = document.getElementById('biodata');
+
+        members.forEach(member => {
+            member.addEventListener('click', () => {
+                const biodata = member.getAttribute('data-biodata');
+                biodataDiv.innerText = biodata;
+                biodataDiv.style.display = 'block';
+            });
+        });
+
+        const manualButton = document.getElementById('manualButton');
+        manualButton.addEventListener('click', () => {
+            window.location.href = 'manual.html';
+        });
+
+        const automaticButton = document.getElementById('automaticButton');
+        automaticButton.addEventListener('click', () => {
+            alert('Automatic functionality is not implemented yet.');
+        });
+    </script>
+</body>
+</html>

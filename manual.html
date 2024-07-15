@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333333;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button.off {
+            background-color: #f44336;
+        }
+        .button.green {
+            background-color: green;
+        }
+        .button.red {
+            background-color: red;
+        }
+        .back-button {
+            background-color: #2196F3;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kelompok 2</h1>
+        <button class="button green" id="toggleButton">ON</button>
+        <button class="button back-button" id="backButton">Back</button>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('toggleButton');
+        const backButton = document.getElementById('backButton');
+
+        toggleButton.addEventListener('click', () => {
+            if (toggleButton.textContent === 'ON') {
+                toggleButton.textContent = 'OFF';
+                toggleButton.classList.remove('green');
+                toggleButton.classList.add('red');
+                document.body.style.backgroundColor = 'red';
+            } else {
+                toggleButton.textContent = 'ON';
+                toggleButton.classList.remove('red');
+                toggleButton.classList.add('green');
+                document.body.style.backgroundColor = 'green';
+            }
+        });
+
+        backButton.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
